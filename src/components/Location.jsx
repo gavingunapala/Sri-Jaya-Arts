@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Location() {
   return (
     <section id="location" className="max-w-6xl mx-auto px-4 py-16">
@@ -13,11 +11,11 @@ export default function Location() {
         <div className="space-y-6">
           <div className="bg-amber-50 border-l-4 border-amber-800 p-5 rounded-r-lg">
             <h4 className="font-bold text-stone-900 mb-1">Our Workshop Address</h4>
-            <p className="text-stone-700 text-sm">123, Temple Road, Highlevel Area, Maharagama, Sri Lanka.</p>
+            <p className="text-stone-700 text-sm">162, Siyabalagoda, Polgasowita, Sri Lanka.</p>
           </div>
           <div className="space-y-3 text-sm">
-            <p><strong>📞 Phone:</strong> +94 7X XXX XXXX</p>
-            <p><strong>💬 WhatsApp:</strong> +94 7X XXX XXXX</p>
+            <p><strong>📞 Phone:</strong> +94 71 674 8730</p>
+            <p><strong>💬 WhatsApp:</strong> +94 71 674 8730</p>
             <p><strong>✉️ Email:</strong> info@pilimakanu.lk</p>
             <p><strong>⏰ Working Hours:</strong> Daily 8:00 AM - 6:00 PM</p>
           </div>
@@ -25,12 +23,22 @@ export default function Location() {
 
         <div className="w-full h-72 bg-stone-200 rounded-xl overflow-hidden shadow-inner relative border border-stone-300">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.3411440620253!2d79.9224451!3d6.8496245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25761a293d047%3A0xa1969df3b12f6fbf!2sMaharagama!5e0!3m2!1sen!2slk!4v1710000000000!5m2!1sen!2slk" 
+            src="https://www.google.com/maps?q=6.792502,79.9694945&z=19&output=embed"
             className="w-full h-full border-0"
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10">
+            <a
+              href="https://maps.app.goo.gl/D1pE3okVjRckoDkh8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-amber-800 text-white px-3 py-1 rounded-md text-sm shadow"
+            >
+              Open in Google Maps
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -1,4 +1,3 @@
-import React from 'react'
 import profileImg from '../assets/Profile image.png'
 
 export default function Header() {
@@ -7,7 +6,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <a href="#" className="text-xl font-bold text-amber-800 tracking-wide flex items-center gap-2">
           <img src={profileImg} alt="Profile" className="w-10 h-10 rounded-full object-cover" />
-          <span className="text-2xl">🛕</span> SRI JAYA ARTS Wiyaparaya
+          SRI JAYA ARTS
         </a>
         <nav className="hidden md:flex space-x-6 font-medium text-stone-600">
           <a href="#products" className="hover:text-amber-800 transition">Products</a>
