@@ -13,10 +13,14 @@ export default function Location() {
             <h4 className="font-bold text-stone-900 mb-1">Our Workshop Address</h4>
             <p className="text-stone-700 text-sm">162, Siyabalagoda, Polgasowita, Sri Lanka.</p>
           </div>
+          <div className="bg-amber-50 border-l-4 border-amber-800 p-5 rounded-r-lg">
+            <h4 className="font-bold text-stone-900 mb-1">Our Workshop Address</h4>
+            <p className="text-stone-700 text-sm">162, Siyabalagoda, Polgasowita, Sri Lanka.</p>
+          </div>
           <div className="space-y-3 text-sm text-stone-700">
             <p><strong>📞 Phone:</strong> +94 71 674 8730</p>
             <p><strong>💬 WhatsApp:</strong> +94 71 674 8730</p>
-            <p><strong>✉️ Email:</strong> info@pilimakanu.lk</p>
+            {/* <p><strong>✉️ Email:</strong> info@pilimakanu.lk</p> */}
             <p><strong>⏰ Working Hours:</strong> Daily 8:00 AM - 6:00 PM</p>
           </div>
         </div>
