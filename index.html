@@ -264,12 +264,9 @@
     <!-- Frontend Core Functionality Script -->
     <script>
         const whatsappNumber = "94716748730"; // Enter your actual shop number here without '+' or spaces
-        const currentPath = window.location.pathname;
-        const siteBasePath = currentPath.endsWith('/')
-            ? currentPath
-            : ((currentPath.split('/').pop() || '').includes('.') ? currentPath.replace(/[^/]*$/, '/') : `${currentPath}/`);
-
-        const resolveSiteUrl = (path) => `${siteBasePath}${path.replace(/^\/+/, '')}`;
+        // Use relative paths so the site works on GitHub Pages and local dev.
+        // Avoid root-absolute URLs (starting with '/') which break on repo pages.
+        const resolveSiteUrl = (path) => path.replace(/^\/+/, '');
 
         // Fetch products configuration dynamically from the JSON file
         async function loadProducts() {
