@@ -286,11 +286,14 @@
     <!-- Frontend Core Functionality Script -->
     <script>
         const whatsappNumber = "94716748730"; // Enter your actual shop number here without '+' or spaces
+        const siteBasePath = window.location.pathname.replace(/[^/]*$/, '/');
+
+        const resolveSiteUrl = (path) => `${siteBasePath}${path.replace(/^\/+/, '')}`;
 
         // Fetch products configuration dynamically from the JSON file
         async function loadProducts() {
             try {
-                const response = await fetch('src/data/products.json');
+                const response = await fetch(resolveSiteUrl('src/data/products.json'));
                 if (!response.ok) throw new Error('Failed to load products source.');
                 const products = await response.ok ? await response.json() : [];
                 renderGrid(products);
@@ -313,7 +316,7 @@
                 card.innerHTML = `
                     <div>
                         <div class="overflow-hidden bg-stone-100">
-                            <img src="${product.image}" alt="${product.name}" class="w-full h-56 object-contain group-hover:scale-105 transition-transform duration-500">
+                            <img src="${resolveSiteUrl(product.image)}" alt="${product.name}" class="w-full h-56 object-contain group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="p-5">
                             <h3 class="font-extrabold text-xl text-dark mb-3 tracking-tight leading-snug group-hover:text-gold transition-colors">${product.name}</h3>
@@ -333,7 +336,7 @@
 
         // Modal Action Scripts
         function openModal(product) {
-            document.getElementById('modal-image').src = product.image;
+            document.getElementById('modal-image').src = resolveSiteUrl(product.image);
             document.getElementById('modal-image').alt = product.name;
             document.getElementById('modal-title').innerText = product.name;
             document.getElementById('modal-price').innerText = product.price;
