@@ -53,8 +53,29 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
 
-  <!-- Vite entrypoint -->
-  <script type="module" src="/src/main.jsx"></script>
+  <script>
+    (function () {
+      var isGitHubPages = location.hostname === 'gavingunapala.github.io' && location.pathname.indexOf('/Sri-Jaya-Arts/') === 0;
+
+      if (isGitHubPages) {
+        var css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = './assets/app.css';
+        document.head.appendChild(css);
+
+        var script = document.createElement('script');
+        script.type = 'module';
+        script.src = './assets/app.js';
+        document.head.appendChild(script);
+        return;
+      }
+
+      var devScript = document.createElement('script');
+      devScript.type = 'module';
+      devScript.src = '/src/main.jsx';
+      document.head.appendChild(devScript);
+    })();
+  </script>
 
 </head>
 
