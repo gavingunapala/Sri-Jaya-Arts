@@ -7,13 +7,13 @@ export default function Location() {
         <div className="w-16 h-1 bg-amber-700 mx-auto mt-4 rounded"></div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         <div className="space-y-6">
           <div className="bg-amber-50 border-l-4 border-amber-800 p-5 rounded-r-lg">
             <h4 className="font-bold text-stone-900 mb-1">Our Workshop Address</h4>
             <p className="text-stone-700 text-sm">162, Siyabalagoda, Polgasowita, Sri Lanka.</p>
           </div>
-          <div className="space-y-3 text-sm">
+          <div className="space-y-3 text-sm text-stone-700">
             <p><strong>📞 Phone:</strong> +94 71 674 8730</p>
             <p><strong>💬 WhatsApp:</strong> +94 71 674 8730</p>
             <p><strong>✉️ Email:</strong> info@pilimakanu.lk</p>
@@ -21,20 +21,17 @@ export default function Location() {
           </div>
         </div>
 
-        <div className="w-full h-72 bg-stone-200 rounded-xl overflow-hidden shadow-inner relative border border-stone-300">
-          <iframe 
-            src="https://www.google.com/maps?q=6.792502,79.9694945&z=19&output=embed"
-            className="w-full h-full border-0"
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10">
+        <div className="w-full rounded-xl border border-stone-200 bg-stone-50 p-6 shadow-sm">
+          <div className="aspect-[16/10] rounded-lg border border-dashed border-stone-300 bg-gradient-to-br from-stone-100 to-amber-50 flex flex-col items-center justify-center text-center p-6">
+            <p className="text-stone-900 font-semibold mb-2">Static location card</p>
+            <p className="text-sm text-stone-600 max-w-sm">
+              The published site uses only local content. Use the address above or open the map link on demand.
+            </p>
             <a
               href="https://maps.app.goo.gl/D1pE3okVjRckoDkh8"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-amber-800 text-white px-3 py-1 rounded-md text-sm shadow"
+              className="mt-5 bg-amber-800 text-white px-4 py-2 rounded-md text-sm shadow"
             >
               Open in Google Maps
             </a>

@@ -1,19 +1,6 @@
-export default function Feedback() {
-  const reviewImages = [
-    {
-      src: '/reviews/whatsapp-review-1.svg',
-      alt: 'WhatsApp review screenshot from a customer in Maharagama',
-    },
-    {
-      src: '/reviews/google-review-1.svg',
-      alt: 'Google review screenshot from a customer in Kandy',
-    },
-    {
-      src: '/reviews/whatsapp-review-2.svg',
-      alt: 'WhatsApp review screenshot from a customer in Kaduwela',
-    },
-  ]
+import feedbackData from '../data/feedback.json'
 
+export default function Feedback() {
   const resolveImageSrc = (imagePath) => `${import.meta.env.BASE_URL}${imagePath.replace(/^\/+/, '')}`
 
   return (
@@ -26,10 +13,15 @@ export default function Feedback() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {reviewImages.map((reviewImage) => (
-            <div key={reviewImage.src} className="bg-white rounded-xl shadow-sm border border-stone-200/40 overflow-hidden">
+          {feedbackData.map((review) => (
+            <div key={review.id} className="bg-white rounded-xl shadow-sm border border-stone-200/40 overflow-hidden">
               <div className="relative bg-stone-100">
-                <img src={resolveImageSrc(reviewImage.src)} alt={reviewImage.alt} className="w-full h-56 object-contain" />
+                <img src={resolveImageSrc(review.image)} alt={review.imageAlt} className="w-full h-56 object-contain" />
+              </div>
+              <div className="p-5">
+                <div className="flex text-amber-500 mb-3 text-lg">★★★★★</div>
+                {review.quote ? <p className="text-stone-700 text-sm mb-4 italic">"{review.quote}"</p> : null}
+                {review.author ? <div className="font-semibold text-stone-950 text-sm">- {review.author}</div> : <div className="font-semibold text-stone-950 text-sm">{review.source}</div>}
               </div>
             </div>
           ))}
