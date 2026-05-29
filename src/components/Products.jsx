@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import productsData from '../data/products.json'
 import ProductCard from './ProductCard'
 import ProductModal from './ProductModal'

@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Footer() {
   return (
     <footer className="bg-footer text-footer py-8 px-4 text-center text-sm border-t" style={{borderColor: 'rgba(255,255,255,0.06)'}}>

@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function ProductCard({ product, onOpen }) {
   const resolveImageSrc = (imagePath) => `${import.meta.env.BASE_URL}${imagePath.replace(/^\/+/, '')}`
 
