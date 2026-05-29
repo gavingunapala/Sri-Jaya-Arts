@@ -286,7 +286,10 @@
     <!-- Frontend Core Functionality Script -->
     <script>
         const whatsappNumber = "94716748730"; // Enter your actual shop number here without '+' or spaces
-        const siteBasePath = window.location.pathname.replace(/[^/]*$/, '/');
+        const currentPath = window.location.pathname;
+        const siteBasePath = currentPath.endsWith('/')
+            ? currentPath
+            : ((currentPath.split('/').pop() || '').includes('.') ? currentPath.replace(/[^/]*$/, '/') : `${currentPath}/`);
 
         const resolveSiteUrl = (path) => `${siteBasePath}${path.replace(/^\/+/, '')}`;
 
