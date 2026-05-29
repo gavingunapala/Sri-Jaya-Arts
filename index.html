@@ -290,12 +290,10 @@
 
         const resolveSiteUrl = (path) => `${siteBasePath}${path.replace(/^\/+/, '')}`;
 
-        const profileImageUrl = resolveSiteUrl('src/assets/Profile image.png');
-
         // Fetch products configuration dynamically from the JSON file
         async function loadProducts() {
             try {
-                const response = await fetch(resolveSiteUrl('src/data/products.json'));
+                const response = await fetch(resolveSiteUrl('data/products.json'));
                 if (!response.ok) throw new Error('Failed to load products source.');
                 const products = await response.ok ? await response.json() : [];
                 renderGrid(products);
@@ -305,8 +303,6 @@
                     `<div class="col-span-full text-center py-12 text-red-600 font-medium">Error loading catalog data. Please ensure products.json is present.</div>`;
             }
         }
-
-        document.querySelector('header img[alt="Profile"]').src = profileImageUrl;
 
         // Render products list into visual cards
         function renderGrid(products) {
