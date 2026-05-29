@@ -290,6 +290,8 @@
 
         const resolveSiteUrl = (path) => `${siteBasePath}${path.replace(/^\/+/, '')}`;
 
+        const profileImageUrl = resolveSiteUrl('src/assets/Profile image.png');
+
         // Fetch products configuration dynamically from the JSON file
         async function loadProducts() {
             try {
@@ -303,6 +305,8 @@
                     `<div class="col-span-full text-center py-12 text-red-600 font-medium">Error loading catalog data. Please ensure products.json is present.</div>`;
             }
         }
+
+        document.querySelector('header img[alt="Profile"]').src = profileImageUrl;
 
         // Render products list into visual cards
         function renderGrid(products) {
