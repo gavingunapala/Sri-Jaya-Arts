@@ -1,4 +1,5 @@
 import path from 'node:path'
+import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -7,7 +8,7 @@ const rootDir = fileURLToPath(new URL('.', import.meta.url))
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/Sri-Jaya-Arts/' : '/',
+  base: mode === 'production' && process.env.VERCEL !== '1' ? '/Sri-Jaya-Arts/' : '/',
   plugins: [react()],
   build: {
     rollupOptions: {
