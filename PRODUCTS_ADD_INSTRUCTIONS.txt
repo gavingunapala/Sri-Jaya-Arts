@@ -34,6 +34,9 @@ How to add a new product and publish it to GitHub Pages
   Remove-Item -Recurse -Force docs
   Copy-Item -Path dist\* -Destination docs -Recurse -Force
 
+- Or use the one-command publish flow:
+  npm run publish-main
+
 5) Commit and push to `main`
 - Stage and commit changes (include updated JSON, images and updated `docs/`):
   git add -A
@@ -55,9 +58,7 @@ Troubleshooting notes
 
 Example quick workflow (PowerShell):
   # put image in public/products and update JSON files
-  npm run build
-  Remove-Item -Recurse -Force docs
-  Copy-Item -Path dist\* -Destination docs -Recurse -Force
+  npm run publish-main
   git add -A
   git commit -m "Add product PR-004 and publish docs"
   git push origin main

@@ -4,7 +4,7 @@ export default function ProductModal({ product, onClose }) {
   const resolveImageSrc = (imagePath) => `${import.meta.env.BASE_URL}${imagePath.replace(/^\/+/, '')}`
 
   const whatsappNumber = '94716748730'
-  const message = `BuduSRI JAYA ARTS Order Form:\n\n*Product Name:* ${product.name}\n*Product Code:* ${product.id}\n*Price:* ${product.price}\n\nMata meka ganna thawa wisthara tikak kiyanna puluwanda?`
+  const message = `BuduSRI JAYA ARTS Order Form:\n\n*Product Name:* ${product.name}\n*Product Code:* ${product.id}\n\nMata meka ganna thawa wisthara tikak kiyanna puluwanda?`
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
 
   return (
