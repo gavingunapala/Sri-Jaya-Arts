@@ -7,7 +7,7 @@ const rootDir = fileURLToPath(new URL('.', import.meta.url))
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/Sri-Jaya-Arts/' : '/',
+  base: process.env.VERCEL ? '/' : mode === 'production' ? '/Sri-Jaya-Arts/' : '/',
   plugins: [react()],
   build: {
     rollupOptions: {
