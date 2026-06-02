@@ -1,0 +1,67 @@
+How to add a new product and publish it to GitHub Pages
+
+1) Prepare image files
+- Put your product image(s) into `public/products/` using lowercase filenames (example: `buduras.jpeg`).
+- If you are renaming an existing file on Windows and the only change is case, use a two-step git move so Git records it:
+  git mv public/products/OldName.jpeg public/products/oldname_temp.jpeg
+  git mv public/products/oldname_temp.jpeg public/products/oldname.jpeg
+  git add public/products
+  git commit -m "Add product image: oldname.jpeg"
+
+2) Add the product JSON entry
+- Edit `src/data/products.json` and add a new object with the fields your app expects. Example:
+  {
+    "id": "PR-004",
+    "name": "Example Product",
+    "price": "",
+    "shortDescription": "Short description here",
+    "longDescription": "Long description here",
+    "dimensions": "Dimensions or extras",
+    "image": "products/example.jpeg"
+  }
+- To keep all copies consistent, also update `public/data/products.json` and `data/products.json` if they exist in the repo.
+
+3) Test locally
+- Start the dev server to preview the change quickly:
+  npm run dev
+- Open `http://localhost:5173/#products` and confirm the new product appears and the image loads.
+
+4) Build and prepare `docs/` for GitHub Pages
+- Build the production bundle:
+  npm run build
+
+- Copy the `dist` output into `docs/` (PowerShell example):
+  Remove-Item -Recurse -Force docs
+  Copy-Item -Path dist\* -Destination docs -Recurse -Force
+
+5) Commit and push to `main`
+- Stage and commit changes (include updated JSON, images and updated `docs/`):
+  git add -A
+  git commit -m "Add product PR-004 and publish docs"
+  git push origin main
+
+6) Wait and verify
+- Wait 1–2 minutes for GitHub Pages to update, then hard-refresh the site:
+  https://<your-github-username>.github.io/<repo-name>/#products
+- If an image 404s, check:
+  - The filename case matches exactly (GitHub Pages is case-sensitive).
+  - The image exists in `docs/products/` in the remote `main` branch (use the Raw URL to verify).
+
+Troubleshooting notes
+- If you see 404 for a lowercase URL but the file exists with only case differences, perform the two-step `git mv` to force Git to record the rename.
+- If GitHub Pages is still configured to use a `gh-pages` branch, change the Pages source in the GitHub repository Settings → Pages to `main` and folder `/docs`.
+- For quick checks of a file on the server use:
+  https://raw.githubusercontent.com/<username>/<repo>/main/docs/products/<filename>
+
+Example quick workflow (PowerShell):
+  # put image in public/products and update JSON files
+  npm run build
+  Remove-Item -Recurse -Force docs
+  Copy-Item -Path dist\* -Destination docs -Recurse -Force
+  git add -A
+  git commit -m "Add product PR-004 and publish docs"
+  git push origin main
+
+That’s it — after pushing, wait a couple minutes and refresh the public site.
+
+If you want, I can also add a simple script to automate the `dist -> docs` copy-and-commit step.
