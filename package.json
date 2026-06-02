@@ -4,9 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "node init && vite",
+    "build": "node init && vite build",
     "postbuild": "node scripts/copy-dist-index.mjs",
+    "syncdocs": "node scripts/sync-docs.mjs",
+    "publish-main": "npm run build && npm run syncdocs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "lint": "eslint .",
