@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="WhatsApp review screenshot placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="100%" stop-color="#fffbeb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect x="90" y="80" width="1020" height="740" rx="42" fill="#ffffff" stroke="#fed7aa" stroke-width="4"/>
+  <rect x="90" y="80" width="1020" height="96" rx="42" fill="#ffedd5"/>
+  <circle cx="170" cy="128" r="28" fill="#f97316"/>
+  <path d="M160 120c0-6 5-11 11-11h2c13 0 23 10 23 23v2c0 6-5 11-11 11h-4l-10 9-2-9h-3c-6 0-11-5-11-11z" fill="#ffffff"/>
+  <text x="220" y="140" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#9a3412">WhatsApp Review</text>
+  <text x="170" y="250" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" fill="#111827">සංජීව බණ්ඩාර</text>
+  <text x="170" y="308" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#6b7280">Sent as customer screenshot</text>
+  <text x="170" y="410" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#374151">අඩු මිලට ගන්න ලැබුනු</text>
+  <text x="170" y="462" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#374151">වටිනාම කණුවක්.</text>
+  <text x="170" y="514" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#374151">අව්වට වැස්සට ඔරොත්තු දෙනවා.</text>
+  <rect x="170" y="610" width="860" height="116" rx="26" fill="#f3f4f6"/>
+  <text x="208" y="666" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#4b5563">Screenshot-style review card for the website</text>
+  <text x="208" y="708" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#6b7280">Replace this file with the actual WhatsApp screenshot when ready.</text>
+</svg>
